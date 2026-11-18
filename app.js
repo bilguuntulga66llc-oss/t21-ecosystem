@@ -1,10 +1,10 @@
 import { search, publicEntry, statuses } from './discovery.mjs';
 
-// Only public catalog data is fetched. Static links and category listings stay
-// usable if enhancement cannot initialize; never hide content before validation.
+// Directory search. Reads the public catalog; the static list remains
+// usable if the catalog cannot be loaded.
 async function enhanceDirectory(root) {
   const form = root.querySelector('[data-search]');
-  // Small catalogs are rendered without search; nothing to enhance or fetch.
+  // Search controls are rendered only for larger catalogs.
   if (!form) return;
   const query = form.elements.namedItem('q');
   const status = form.elements.namedItem('status');

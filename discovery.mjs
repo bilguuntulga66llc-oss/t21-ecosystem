@@ -1,8 +1,7 @@
-// Search semantics adapted from EcosystemHub's tested catalog. No runtime
-// dependency on the old app; this model separates editorial state from maturity.
+// Public listing model: field validation, categories, statuses and search.
 export const categories = Object.freeze({ market: 'Зах зээлийн мэдээлэл', research: 'Компанийн судалгаа' });
 export const statuses = Object.freeze({ live: 'Ашиглах боломжтой', concept: 'Тун удахгүй' });
-// Product-specific illustrations a listing may opt into; never a default.
+// Illustrations a listing may reference explicitly.
 export const illustrations = Object.freeze(['ownership-chain']);
 const normalize = value => value.normalize('NFC').toLocaleLowerCase('mn').trim();
 const text = (value, field, max) => {
