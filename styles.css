@@ -25,6 +25,8 @@
 .about section{margin:36px 0}
 .about h2{font-size:1.15rem;margin:0 0 12px}
 .about .facts{margin:0;padding-left:20px;display:grid;gap:6px}
+.about section>p{margin:0}
+.about section>*+p{margin-top:12px}
 .about .parts{margin:0;display:grid;gap:18px}
 .about .parts dt{font-weight:700}
 .about .parts dd{margin:4px 0 0;color:var(--muted)}
@@ -39,3 +41,4 @@
 .listing-policy p{margin:0 0 8px;color:var(--muted)}
 .forthcoming{margin-top:36px}
 .forthcoming>h2{font-size:1.05rem;margin:0 0 14px}
+.about-identity{max-width:62ch;font-size:1.15rem;margin:18px 0 0}
