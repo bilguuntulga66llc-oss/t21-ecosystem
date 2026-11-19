@@ -1,6 +1,6 @@
 // Public listing model: field validation, categories, statuses and search.
 export const categories = Object.freeze({ market: 'Зах зээлийн мэдээлэл', research: 'Компанийн судалгаа' });
-export const statuses = Object.freeze({ live: 'Ашиглах боломжтой', concept: 'Тун удахгүй' });
+export const statuses = Object.freeze({ live: 'Нээлтээ хийсэн', concept: 'Тун удахгүй' });
 // Illustrations a listing may reference explicitly.
 export const illustrations = Object.freeze(['ownership-chain']);
 // Verified technical relation of a listing to T21; only for available products.

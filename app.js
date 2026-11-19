@@ -27,7 +27,7 @@ async function enhanceDirectory(root) {
     const note = document.createElement('p');
     note.className = 'notice';
     note.setAttribute('role', 'status');
-    note.textContent = 'Хайлт ачаалагдсангүй. Бүтээгдэхүүнийг жагсаалтаас сонгоно уу.';
+    note.textContent = 'Хайлт ачаалагдсангүй. Төслийг жагсаалтаас сонгоно уу.';
     form.before(note);
     return;
   }
@@ -44,7 +44,7 @@ async function enhanceDirectory(root) {
       if (!row.hidden) visible += 1;
     }
     for (const group of root.querySelectorAll('[data-group]')) group.hidden = !group.querySelector('.product-row:not([hidden])');
-    count.textContent = `${visible} бүтээгдэхүүн`;
+    count.textContent = `${visible} төсөл`;
     empty.hidden = visible !== 0;
     reset.hidden = !q && !selectedStatus;
     if (updateURL) {

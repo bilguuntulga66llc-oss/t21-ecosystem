@@ -9,9 +9,6 @@
 .panel-title{font-size:.9rem;font-weight:700;margin:0 0 6px}
 .directory-layout.compact{display:block}
 .developer-primary>h2{margin-bottom:22px}
-.listing-note{margin-top:36px;padding-top:24px;border-top:1px solid var(--line)}
-.listing-note h2{font-size:1rem;margin:0 0 8px}
-.listing-note p{margin:0;color:var(--muted)}
 .home-intro h1{margin-bottom:22px}
 .home-summary{max-width:62ch;display:grid;gap:12px;font-size:1.08rem}
 .home-section{margin:44px 0}
@@ -39,6 +36,4 @@
 .listing-policy{max-width:760px;margin:40px 0 56px;padding-top:24px;border-top:1px solid var(--line)}
 .listing-policy h2{font-size:1.05rem;margin:0 0 10px}
 .listing-policy p{margin:0 0 8px;color:var(--muted)}
-.forthcoming{margin-top:36px}
-.forthcoming>h2{font-size:1.05rem;margin:0 0 14px}
 .about-identity{max-width:62ch;font-size:1.15rem;margin:18px 0 0}
