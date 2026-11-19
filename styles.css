@@ -33,3 +33,9 @@
 @media(max-width:700px){.paths{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:6px}}
 .dev-context{margin:0 0 18px;color:var(--muted);max-width:62ch}
 .dev-context .text-link{display:flex;width:max-content}
+.relation{margin:2px 0 0;font-size:.78rem;color:var(--muted)}
+.listing-policy{max-width:760px;margin:40px 0 56px;padding-top:24px;border-top:1px solid var(--line)}
+.listing-policy h2{font-size:1.05rem;margin:0 0 10px}
+.listing-policy p{margin:0 0 8px;color:var(--muted)}
+.forthcoming{margin-top:36px}
+.forthcoming>h2{font-size:1.05rem;margin:0 0 14px}

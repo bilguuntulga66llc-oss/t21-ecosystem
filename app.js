@@ -43,6 +43,7 @@ async function enhanceDirectory(root) {
       row.hidden = !matches.has(row.dataset.product);
       if (!row.hidden) visible += 1;
     }
+    for (const group of root.querySelectorAll('[data-group]')) group.hidden = !group.querySelector('.product-row:not([hidden])');
     count.textContent = `${visible} бүтээгдэхүүн`;
     empty.hidden = visible !== 0;
     reset.hidden = !q && !selectedStatus;

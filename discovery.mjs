@@ -3,6 +3,8 @@ export const categories = Object.freeze({ market: 'Зах зээлийн мэд�
 export const statuses = Object.freeze({ live: 'Ашиглах боломжтой', concept: 'Тун удахгүй' });
 // Illustrations a listing may reference explicitly.
 export const illustrations = Object.freeze(['ownership-chain']);
+// Verified technical relation of a listing to T21; only for available products.
+export const relations = Object.freeze({ api: 'T21 API-г ашиглаж буй' });
 const normalize = value => value.normalize('NFC').toLocaleLowerCase('mn').trim();
 const text = (value, field, max) => {
   if (typeof value !== 'string' || !value.trim() || value.length > max) throw new Error(`${field}: required text, max ${max}`);
@@ -21,6 +23,11 @@ export function publicEntry(source) {
     entry.href = url.href;
     entry.domain = url.hostname;
   } else if (source.href !== undefined) throw new Error('concept: no outbound destination');
+  if (source.t21Relation !== undefined) {
+    if (!Object.hasOwn(relations, source.t21Relation)) throw new Error('relation: unknown');
+    if (source.status !== 'live') throw new Error('relation: only for available products');
+    entry.t21Relation = source.t21Relation;
+  }
   if (source.illustration !== undefined) {
     if (!illustrations.includes(source.illustration)) throw new Error('illustration: unknown');
     entry.illustration = source.illustration;
