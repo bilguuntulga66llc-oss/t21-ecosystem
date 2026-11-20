@@ -3,6 +3,8 @@ export const categories = Object.freeze({ market: 'Зах зээлийн мэд�
 export const statuses = Object.freeze({ live: 'Нээлтээ хийсэн', concept: 'Тун удахгүй' });
 // Illustrations a listing may reference explicitly.
 export const illustrations = Object.freeze(['ownership-chain']);
+// Interface languages a listing may state.
+export const languages = Object.freeze({ mn: 'Монгол', en: 'Англи' });
 // Verified technical relation of a listing to T21; only for available products.
 export const relations = Object.freeze({ api: 'T21 API' });
 const normalize = value => value.normalize('NFC').toLocaleLowerCase('mn').trim();
@@ -31,6 +33,17 @@ export function publicEntry(source) {
   if (source.illustration !== undefined) {
     if (!illustrations.includes(source.illustration)) throw new Error('illustration: unknown');
     entry.illustration = source.illustration;
+  }
+  if (source.languages !== undefined) {
+    if (!Array.isArray(source.languages) || !source.languages.length || source.languages.some(code => !Object.hasOwn(languages, code))) throw new Error('languages: invalid');
+    entry.languages = Object.freeze([...source.languages]);
+  }
+  if (source.gallery !== undefined) {
+    if (source.status !== 'live' || !Array.isArray(source.gallery) || !source.gallery.length || source.gallery.length > 6) throw new Error('gallery: invalid');
+    entry.gallery = Object.freeze(source.gallery.map(shot => {
+      if (typeof shot?.file !== 'string' || !/^[a-z0-9]+(?:-[a-z0-9]+)*\.jpg$/.test(shot.file)) throw new Error('gallery: file');
+      return Object.freeze({ file: shot.file, alt: text(shot.alt, 'gallery alt', 200) });
+    }));
   }
   if (source.sections !== undefined) {
     if (!Array.isArray(source.sections) || source.sections.length > 20) throw new Error('sections: invalid');
