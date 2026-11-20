@@ -6,6 +6,40 @@
   <nav class="docs-nav" aria-label="Баримт бичгийн цэс"><a class="docs-nav-home" href="/t21-ecosystem/docs/">Баримт бичиг</a><ul><li class="docs-nav-single"><a href="/t21-ecosystem/docs/get-started/">Get started</a></li><li><span class="docs-nav-group">Guides</span><ul><li><a href="/t21-ecosystem/docs/guides/price-history/">Ханшийн түүх авах</a></li><li><a href="/t21-ecosystem/docs/guides/financial-statements/">Санхүүгийн тайлан авах</a></li><li><a href="/t21-ecosystem/docs/guides/ownership/">Хувь эзэмшлийн мэдээлэл авах</a></li></ul></li><li><span class="docs-nav-group">Concepts</span><ul><li><a href="/t21-ecosystem/docs/concepts/architecture/" aria-current="page">Architecture</a></li><li><a href="/t21-ecosystem/docs/concepts/point-in-time/">Point-in-time</a></li><li><a href="/t21-ecosystem/docs/concepts/provenance/">Provenance</a></li><li><a href="/t21-ecosystem/docs/concepts/data-quality/">Data quality</a></li><li><a href="/t21-ecosystem/docs/concepts/data-integrity/">Data integrity</a></li><li><a href="/t21-ecosystem/docs/concepts/data-contracts/">Data contracts</a></li></ul></li><li class="docs-nav-single"><a href="/t21-ecosystem/docs/access/">Access</a></li><li class="docs-nav-single"><a href="/t21-ecosystem/docs/data-catalog/">Data catalog</a></li><li><span class="docs-nav-group">Reference</span><ul><li><a href="https://t21-api-production.up.railway.app/docs">API reference <span aria-hidden="true">↗</span></a></li><li><a href="/t21-ecosystem/docs/changelog/">Changelog</a></li></ul></li></ul></nav>
   <article class="docs-article"><nav class="docs-breadcrumb" aria-label="Байршил"><a href="/t21-ecosystem/docs/">Баримт бичиг</a> <span aria-hidden="true">/</span> Concepts <span aria-hidden="true">/</span> <span aria-current="page">Architecture</span></nav><div class="docs-title"><h1>Architecture</h1></div>
   <p class="doc-intro">T21 нь санхүүгийн өгөгдлийг хариуцдаг T21 Foundation болон хандалтыг хариуцдаг Developer Platform гэсэн хоёр үйлчилгээнээс бүрдэнэ. Production орчин single-node deployment-ээр ажилладаг.</p>
+<figure class="doc-figure">
+<div class="doc-figure-scroll" tabindex="0" aria-label="Диаграм, хэвтээ гүйлгэнэ"><svg class="arch" viewBox="0 0 880 330" role="img" aria-labelledby="arch-title arch-desc">
+<title id="arch-title">T21-ийн бүрэлдэхүүн ба өгөгдлийн урсгал</title>
+<desc id="arch-desc">T21 Foundation эх сурвалжаас өгөгдлийг уншиж хадгалан T21 API болон MCP-ээр хүргэнэ. Таны систем Developer Platform-оос credential-аар token авч, тэр token-оор T21 API, MCP-д хандана. Foundation token-ийг Developer Platform-ийн нийтэлсэн key set, revocation snapshot-оор баталгаажуулна.</desc>
+<defs><marker id="arch-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arch-head" d="M0 0L10 5L0 10z"/></marker></defs>
+<rect class="arch-box" x="20" y="150" width="150" height="90" rx="8"/>
+<text class="arch-label" x="95" y="188">Эх сурвалж</text>
+<text class="arch-note" x="95" y="212">MSE, NSO</text>
+<rect class="arch-group" x="220" y="110" width="340" height="200" rx="10"/>
+<text class="arch-label" x="390" y="138">T21 Foundation</text>
+<rect class="arch-box" x="240" y="160" width="130" height="55" rx="8"/>
+<text class="arch-label" x="305" y="193">Хадгалалт</text>
+<rect class="arch-box arch-key" x="410" y="160" width="130" height="55" rx="8"/>
+<text class="arch-label" x="475" y="193">T21 API</text>
+<rect class="arch-box arch-key" x="410" y="235" width="130" height="50" rx="8"/>
+<text class="arch-label" x="475" y="265">MCP</text>
+<rect class="arch-box" x="680" y="150" width="180" height="110" rx="8"/>
+<text class="arch-label" x="770" y="195">Таны систем</text>
+<text class="arch-note" x="770" y="219">Python client, HTTP</text>
+<rect class="arch-box" x="620" y="10" width="240" height="70" rx="8"/>
+<text class="arch-label" x="740" y="40">Developer Platform</text>
+<text class="arch-note" x="740" y="62">project, credential, token</text>
+<line class="arch-line" x1="170" y1="190" x2="238" y2="190" marker-end="url(#arch-arrow)"/>
+<line class="arch-line" x1="370" y1="188" x2="408" y2="188" marker-end="url(#arch-arrow)"/>
+<line class="arch-line" x1="680" y1="188" x2="542" y2="188" marker-end="url(#arch-arrow)"/>
+<text class="arch-note" x="611" y="180">token</text>
+<line class="arch-line" x1="680" y1="235" x2="542" y2="255" marker-end="url(#arch-arrow)"/>
+<line class="arch-line" x1="770" y1="150" x2="770" y2="82" marker-end="url(#arch-arrow)"/>
+<text class="arch-note arch-end" x="760" y="120">credential → token</text>
+<line class="arch-line arch-dashed" x1="620" y1="50" x2="470" y2="108" marker-end="url(#arch-arrow)"/>
+<text class="arch-note arch-end" x="560" y="40">key set, revocation snapshot</text>
+</svg></div>
+<figcaption>T21-ийн бүрэлдэхүүн ба өгөгдлийн урсгал.</figcaption>
+</figure>
 <h2>Хэрэгжсэн бүрэлдэхүүн</h2>
 <table class="doc-table" tabindex="0"><thead><tr><th>Бүрэлдэхүүн</th><th>Үүрэг</th><th>Төлөв</th></tr></thead><tbody>
 <tr><td data-label="Бүрэлдэхүүн">Developer Platform</td><td data-label="Үүрэг">GitHub-ээр нэвтрүүлж, project, credential-ийг удирдана. Credential-ийг token-оор солих <code>POST /v1/token</code>, баталгаажуулах түлхүүр ба revocation snapshot нийтэлнэ. Python client түгээнэ.</td><td data-label="Төлөв"><span class="doc-status doc-status-production">Production</span></td></tr>
