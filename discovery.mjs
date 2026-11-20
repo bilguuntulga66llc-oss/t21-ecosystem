@@ -4,7 +4,7 @@ export const statuses = Object.freeze({ live: 'Нээлтээ хийсэн', con
 // Illustrations a listing may reference explicitly.
 export const illustrations = Object.freeze(['ownership-chain']);
 // Verified technical relation of a listing to T21; only for available products.
-export const relations = Object.freeze({ api: 'T21 API-г ашиглаж буй' });
+export const relations = Object.freeze({ api: 'T21 API' });
 const normalize = value => value.normalize('NFC').toLocaleLowerCase('mn').trim();
 const text = (value, field, max) => {
   if (typeof value !== 'string' || !value.trim() || value.length > max) throw new Error(`${field}: required text, max ${max}`);
