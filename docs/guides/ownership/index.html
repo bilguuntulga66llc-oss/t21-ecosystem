@@ -22,7 +22,7 @@ print(data["top3_percent"], data["hhi"])</code></pre>
 <table class="doc-table" tabindex="0"><thead><tr><th>Параметр</th><th>Утга</th></tr></thead><tbody>
 <tr><td data-label="Параметр"><code>symbol</code></td><td data-label="Утга">Үнэт цаасны код, жишээ нь <code>APU</code>.</td></tr>
 <tr><td data-label="Параметр"><code>top_n</code></td><td data-label="Утга">Буцаах хувь эзэмшигчийн тоо, 1–100. Анхдагч утга 10.</td></tr>
-<tr><td data-label="Параметр"><code>stored</code></td><td data-label="Утга"><code>true</code> үед T21-ийн хадгалсан хувилбарыг уншина.</td></tr>
+<tr><td data-label="Параметр"><code>stored</code></td><td data-label="Утга">Анхдагч утга <code>false</code>: эх сурвалжаас шууд уншина. <code>true</code> үед T21-ийн хадгалсан хувилбарыг уншина.</td></tr>
 <tr><td data-label="Параметр"><code>observed_by</code></td><td data-label="Утга">ISO 8601 огноо, цаг. T21-ийн тухайн мөч хүртэл хадгалсан хувилбарыг буцаана.</td></tr>
 </tbody></table>
 <h2>Хариу</h2>
@@ -30,7 +30,7 @@ print(data["top3_percent"], data["hhi"])</code></pre>
 <li><code>data.top_holders</code>: томоохон хувь эзэмшигчдийн жагсаалт, тус бүр <code>provenance</code>-той.</li>
 <li><code>data.top_holder_percent</code>, <code>data.top3_percent</code>, <code>data.top5_percent</code>, <code>data.hhi</code>: эзэмшлийн төвлөрөл.</li>
 <li><code>data.captured_at</code>: T21 энэ хувь эзэмшлийн мэдээллийг биржээс авсан огноо, цаг.</li>
-<li><code>data.withheld_holders</code>: эзэмшлийн хувь нь 0–100-аас гадуур бичигдсэн хувь эзэмшигч. Ийм хувь эзэмшигч байвал төвлөрлийн үзүүлэлтүүд <code>null</code> байна.</li>
+<li><code>data.withheld_holders</code>: эзэмшлийн хувь нь 0–100-аас гадуур бичигдсэн хувь эзэмшигчдийн жагсаалт. Ийм хувь эзэмшигч байвал төвлөрлийн үзүүлэлтүүд <code>null</code> байна.</li>
 </ul></article>
 </div></main>
   <footer class="site-footer"><a class="footer-brand" href="/t21-ecosystem/">T21 <span>экосистем</span></a><nav class="footer-links" aria-label="Нэмэлт цэс"><a href="/t21-ecosystem/developers/">Хөгжүүлэгчдэд</a><a href="/t21-ecosystem/docs/">Баримт бичиг</a><a href="/t21-ecosystem/docs/changelog/">Changelog</a></nav></footer></body></html>

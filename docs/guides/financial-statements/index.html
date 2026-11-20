@@ -24,7 +24,7 @@ for row in response["data"]["rows"]:
 <tr><td data-label="Параметр"><code>symbol</code></td><td data-label="Утга">Үнэт цаасны код, жишээ нь <code>APU</code>.</td></tr>
 <tr><td data-label="Параметр"><code>year</code></td><td data-label="Утга">Тайлант жил.</td></tr>
 <tr><td data-label="Параметр"><code>season</code></td><td data-label="Утга">Улирал, 1–4, биржийн дугаарласнаар.</td></tr>
-<tr><td data-label="Параметр"><code>published_by</code></td><td data-label="Утга">Огноо. Бирж тухайн өдөр болон түүнээс өмнө нийтэлсэн тайлангууд ирнэ.</td></tr>
+<tr><td data-label="Параметр"><code>published_by</code></td><td data-label="Утга">ISO 8601 огноо. Биржийн тухайн өдөр болон түүнээс өмнө нийтэлсэн тайлангуудыг буцаана.</td></tr>
 <tr><td data-label="Параметр"><code>observed_by</code></td><td data-label="Утга">ISO 8601 огноо, цаг. T21-ийн тухайн мөч хүртэл хадгалсан хувилбарыг буцаана.</td></tr>
 </tbody></table>
 <p><code>year</code>, <code>season</code>-ийг өгөхгүй бол хамгийн сүүлд хадгалсан тайлан ирнэ.</p>
@@ -32,7 +32,7 @@ for row in response["data"]["rows"]:
 <ul>
 <li><code>data.filings</code>: биржийн жагсаасан тайлан бүр, шинээс хуучин руу. <code>year</code>, <code>season</code>, <code>published_date</code>, <code>audit_org</code>, <code>workbook_status</code>.</li>
 <li><code>data.rows</code>: сонгосон тайлан. <code>statements</code> бүр <code>statement</code> (<code>financial_position</code>, <code>income</code>, <code>changes_in_equity</code>, <code>cash_flow</code>), <code>unit</code>, <code>columns</code>, <code>lines</code>-тэй.</li>
-<li><code>data.unmeasured</code>: хадгалагдаагүй тайлан, шалтгаантай нь.</li>
+<li><code>data.unmeasured</code>: хадгалагдаагүй эсвэл файлгүй тайлан, шалтгаантай нь.</li>
 </ul>
 <p>Баганын нэр, мөрийн шошго, нэгж тайланд бичигдсэн хэвээрээ ирнэ. Тайланд нэгжийг тодорхой бичээгүй бол <code>unit_mnt</code> нь <code>null</code> байна. Эх файлын SHA-256 hash болон бусад гарал үүслийн талбарыг <a href="/t21-ecosystem/docs/concepts/provenance/">Provenance</a>-аас үзнэ.</p></article>
 </div></main>
