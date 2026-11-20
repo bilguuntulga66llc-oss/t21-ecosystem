@@ -4,7 +4,7 @@
   <main id="main" tabindex="-1"><div class="docs-layout">
   <form class="docs-search" role="search" data-docs-search hidden><label class="sr-only" for="docs-q">Баримт бичгээс хайх</label><input id="docs-q" name="q" type="search" placeholder="Хайх" maxlength="80" autocomplete="off"><p class="sr-only" data-search-status role="status" aria-live="polite"></p><ul class="docs-results" data-results hidden></ul></form>
   <nav class="docs-nav" aria-label="Баримт бичгийн цэс"><a class="docs-nav-home" href="/t21-ecosystem/docs/">Баримт бичиг</a><ul><li class="docs-nav-single"><a href="/t21-ecosystem/docs/get-started/">Get started</a></li><li><span class="docs-nav-group">Guides</span><ul><li><a href="/t21-ecosystem/docs/guides/price-history/">Ханшийн түүх авах</a></li><li><a href="/t21-ecosystem/docs/guides/financial-statements/">Санхүүгийн тайлан авах</a></li><li><a href="/t21-ecosystem/docs/guides/ownership/">Хувь эзэмшлийн мэдээлэл авах</a></li></ul></li><li><span class="docs-nav-group">Concepts</span><ul><li><a href="/t21-ecosystem/docs/concepts/architecture/">Architecture</a></li><li><a href="/t21-ecosystem/docs/concepts/point-in-time/">Point-in-time</a></li><li><a href="/t21-ecosystem/docs/concepts/provenance/">Provenance</a></li><li><a href="/t21-ecosystem/docs/concepts/data-quality/">Data quality</a></li><li><a href="/t21-ecosystem/docs/concepts/data-integrity/">Data integrity</a></li><li><a href="/t21-ecosystem/docs/concepts/data-contracts/">Data contracts</a></li></ul></li><li class="docs-nav-single"><a href="/t21-ecosystem/docs/access/" aria-current="page">Access</a></li><li class="docs-nav-single"><a href="/t21-ecosystem/docs/data-catalog/">Data catalog</a></li><li><span class="docs-nav-group">Reference</span><ul><li><a href="https://t21-api-production.up.railway.app/docs">API reference <span aria-hidden="true">↗</span></a></li><li><a href="/t21-ecosystem/docs/changelog/">Changelog</a></li></ul></li></ul></nav>
-  <article class="docs-article"><nav class="docs-breadcrumb" aria-label="Байршил"><a href="/t21-ecosystem/docs/">Баримт бичиг</a> <span aria-hidden="true">/</span> <span aria-current="page">Access</span></nav><div class="docs-title"><h1>Access</h1> <span class="doc-status doc-status-production">Production</span></div>
+  <article class="docs-article"><nav class="docs-breadcrumb" aria-label="Байршил"><a href="/t21-ecosystem/docs/">Баримт бичиг</a> <span aria-hidden="true">/</span> <span aria-current="page">Access</span></nav><div class="docs-title"><h1>Access</h1></div>
   <p class="doc-intro">T21 API-д Developer Platform-ийн олгосон token-оор хандана. Token-ий scope нь хандах endpoint-ийг тодорхойлно.</p>
 <h2>Authentication</h2>
 <p>Credential secret-ийг <code>POST /v1/token</code>-д илгээж token авна. <code>scopes</code> жагсаалт өгвөл token-ий scope-ийг нарийсгана. Token 300 секунд хүчинтэй.</p>
@@ -18,13 +18,11 @@
 <tr><td data-label="Scope"><code>knowledge:read</code></td><td data-label="Хамрах өгөгдөл">Санхүүгийн тайлан, хувь эзэмшил, засаглал, суурь үзүүлэлт, үнэлгээ, өгөгдлийн бүрэн бүтэн байдал</td></tr>
 <tr><td data-label="Scope"><code>datasets:read</code></td><td data-label="Хамрах өгөгдөл">Судалгааны каталог, dataset-ийн хайлт, шалгалт</td></tr>
 </tbody></table>
-<p>Endpoint бүр нэг scope шаардана. Operator-ийн scope (<code>ops:read</code>, <code>ops:ingest</code>, <code>ops:diagnostics</code>) зөвхөн тусгайлан олгогдсон бүртгэлд байна.</p>
+<p>Endpoint бүр нэг scope шаардана.</p>
 <h2>Credential шаардахгүй endpoint</h2>
 <p><code>GET /v1/system/health</code>, <code>GET /v1/system/consumption-manifest</code>, <code>GET /v1/system/source-registry</code>.</p>
-<h2>Operator-ийн API key шаарддаг endpoint <span class="doc-status doc-status-limited">Limited</span></h2>
-<p>Census, transparency log, total return болон судалгааны POST хүсэлт зэрэг 24 endpoint Operator-ийн олгосон API key-ээр ажиллана. Platform token-оор эдгээрийг дуудахад <code>scope_missing</code> буцаана.</p>
 <h2>Rate limit</h2>
-<p>Platform token-ий хүсэлтэд project тус бүрээр rate limit үйлчилнэ. Rate limit хэтэрвэл 429 буцаана. Хүсэлтийн давтамжаа <code>Retry-After</code> болон <code>X-RateLimit-Limit</code>, <code>X-RateLimit-Remaining</code>, <code>X-RateLimit-Reset</code> header-ийн дагуу тохируулна уу.</p>
+<p>Developer Platform-ийн token-оор илгээсэн хүсэлтэд project тус бүрээр rate limit үйлчилнэ. Rate limit хэтэрвэл 429 буцаана. Хүсэлтийн давтамжийг <code>Retry-After</code> болон <code>X-RateLimit-Limit</code>, <code>X-RateLimit-Remaining</code>, <code>X-RateLimit-Reset</code> header-ийн дагуу тохируулна.</p>
 <h2>Алдаа</h2>
 <table class="doc-table" tabindex="0"><thead><tr><th>Code</th><th>HTTP</th><th>Утга</th></tr></thead><tbody>
 <tr><td data-label="Code"><code>token_expired</code></td><td data-label="HTTP">401</td><td data-label="Утга">Token-ий хугацаа дууссан</td></tr>

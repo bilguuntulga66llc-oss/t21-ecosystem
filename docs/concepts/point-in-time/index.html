@@ -21,11 +21,8 @@
 <li><code>period_end</code>: тайлант үеийн эцэс.</li>
 <li><code>generated_at</code>: хариу үүссэн хугацаа.</li>
 </ul>
-<h2>Хэрэгжсэн механизм</h2>
-<ul>
-<li>Valuation history нь тухайн арилжааны өдрөөс өмнө нийтлэгдсэн тайланг л ашиглана. Valuation replay bundle нь оролтын өгөгдөл, сонголтын хугацаа, параметрийг хадгалж, дараа нь offline дахин тооцоолох боломжтой. <span class="doc-status doc-status-production">Production</span></li>
-<li>Судалгааны <code>point_in_time_observation.v1</code> schema нь эх сурвалжийн нийтэлсэн огноо (<code>source_published_date</code>), өгөгдөл нээлттэй болсон огноо (<code>source_available_date</code>), feature болон label-ийн хугацааг тусад нь заана. <span class="doc-status doc-status-experimental">Experimental</span></li>
-</ul>
+<h2>Үнэлгээний түүх</h2>
+<p><code>GET /v1/intelligence/{symbol}/valuation-history</code> өдөр бүрийн үзүүлэлтийг тухайн арилжааны өдрөөс өмнө нийтлэгдсэн тайлангаар тооцно.</p>
 <h2>Засвар ба түүх</h2>
 <p>Бирж арилжааны өдрийн мэдээллийг дараа нь засах эсвэл хүчингүй болгох үед T21 анхны болон засварласан ажиглалтыг хоёуланг нь хадгална.</p></article>
 </div></main>
