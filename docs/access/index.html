@@ -30,6 +30,6 @@
 <tr><td data-label="Code"><code>scope_missing</code></td><td data-label="HTTP">403</td><td data-label="Утга">Token-д тухайн endpoint-ийн scope байхгүй</td></tr>
 <tr><td data-label="Code"><code>snapshot_missing</code>, <code>snapshot_expired</code></td><td data-label="HTTP">503</td><td data-label="Утга">Revocation snapshot байхгүй эсвэл хугацаа дууссан</td></tr>
 </tbody></table>
-<p>Developer Platform алдааг <code>{"error": {"code": "…"}}</code>, харин T21 API token-ий баталгаажуулалтын алдааг <code>{"detail": {"code": "…"}}</code> хэлбэрээр буцаана. Хариу бүрийн <code>request_id</code>-г асуудал мэдэгдэхэд ашиглана.</p></article>
+<p>Developer Platform алдааг <code>{"error": {"code": "…"}}</code>, харин T21 API token-ий баталгаажуулалтын алдааг <code>{"detail": {"code": "…"}}</code> хэлбэрээр буцаана. <code>Accept: application/problem+json</code> header илгээвэл хоёр үйлчилгээ алдааг RFC 9457 Problem Details хэлбэрээр буцаана: <code>type</code>, <code>title</code>, <code>status</code>, <code>detail</code>, <code>instance</code>, <code>code</code>. T21 API-ийн хариуны <code>request_id</code>-г асуудал мэдэгдэхэд ашиглана.</p></article>
 </div></main>
   <footer class="site-footer"><a class="footer-brand" href="/t21-ecosystem/">T21 <span>экосистем</span></a><nav class="footer-links" aria-label="Нэмэлт цэс"><a href="/t21-ecosystem/developers/">Хөгжүүлэгчдэд</a><a href="/t21-ecosystem/docs/">Баримт бичиг</a><a href="/t21-ecosystem/docs/changelog/">Changelog</a></nav></footer></body></html>
