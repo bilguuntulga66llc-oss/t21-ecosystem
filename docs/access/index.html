@@ -18,11 +18,11 @@
 <tr><td data-label="Scope"><code>knowledge:read</code></td><td data-label="Хамрах өгөгдөл">Санхүүгийн тайлан, хувь эзэмшил, засаглал, суурь үзүүлэлт, үнэлгээ, өгөгдлийн бүрэн бүтэн байдал</td></tr>
 <tr><td data-label="Scope"><code>datasets:read</code></td><td data-label="Хамрах өгөгдөл">Судалгааны каталог, dataset-ийн хайлт, шалгалт</td></tr>
 </tbody></table>
-<p>Endpoint бүр нэг scope шаардана.</p>
+<p>Хамгаалагдсан endpoint бүр нэг scope шаардана.</p>
 <h2>Credential шаардахгүй endpoint</h2>
 <p><code>GET /v1/system/health</code>, <code>GET /v1/system/consumption-manifest</code>, <code>GET /v1/system/source-registry</code>, <code>GET /v1/system/datasets</code>.</p>
 <h2>Rate limit</h2>
-<p>Developer Platform-ийн token-оор илгээсэн хүсэлтэд project тус бүрээр rate limit үйлчилнэ. Rate limit хэтэрвэл 429 буцаана. Хүсэлтийн давтамжийг <code>Retry-After</code> болон <code>X-RateLimit-Limit</code>, <code>X-RateLimit-Remaining</code>, <code>X-RateLimit-Reset</code> header-ийн дагуу тохируулна.</p>
+<p>Developer Platform-ийн token-оор илгээсэн хүсэлтэд project тус бүрээр rate limit үйлчилнэ. Rate limit хэтэрвэл 429 буцаана. Хүсэлтийн давтамжийг <code>Retry-After</code> болон <code>X-RateLimit-Limit</code>, <code>X-RateLimit-Remaining</code>, <code>X-RateLimit-Reset</code> header-ийн дагуу тохируулна. <code>X-RateLimit-Reset</code> нь хязгаар шинэчлэгдэх хүртэлх секунд.</p>
 <h2>Алдаа</h2>
 <table class="doc-table" tabindex="0"><thead><tr><th>Code</th><th>HTTP</th><th>Утга</th></tr></thead><tbody>
 <tr><td data-label="Code"><code>token_expired</code></td><td data-label="HTTP">401</td><td data-label="Утга">Token-ий хугацаа дууссан</td></tr>

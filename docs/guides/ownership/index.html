@@ -14,7 +14,7 @@
 client = T21()
 response = client.ownership("APU", top_n=5)
 data = response["data"]
-print(data["top3_percent"], data["hhi"])</code></pre>
+print(data["ownership"]["top3_percent"], data["ownership"]["hhi"])</code></pre>
 <h2>HTTP</h2>
 <pre class="doc-code" tabindex="0"><code>curl "https://t21-api-production.up.railway.app/v1/intelligence/APU/ownership?top_n=5" \
   -H "Authorization: Bearer &lt;access_token&gt;"</code></pre>
@@ -27,8 +27,8 @@ print(data["top3_percent"], data["hhi"])</code></pre>
 </tbody></table>
 <h2>Хариу</h2>
 <ul>
-<li><code>data.top_holders</code>: томоохон хувь эзэмшигчдийн жагсаалт, тус бүр <code>provenance</code>-той.</li>
-<li><code>data.top_holder_percent</code>, <code>data.top3_percent</code>, <code>data.top5_percent</code>, <code>data.hhi</code>: эзэмшлийн төвлөрөл.</li>
+<li><code>data.ownership.top_holders</code>: томоохон хувь эзэмшигчдийн жагсаалт, тус бүр <code>provenance</code>-той.</li>
+<li><code>data.ownership.top_holder_percent</code>, <code>data.ownership.top3_percent</code>, <code>data.ownership.top5_percent</code>, <code>data.ownership.hhi</code>: эзэмшлийн төвлөрөл.</li>
 <li><code>data.captured_at</code>: T21 энэ хувь эзэмшлийн мэдээллийг биржээс авсан огноо, цаг.</li>
 <li><code>data.withheld_holders</code>: эзэмшлийн хувь нь 0–100-аас гадуур бичигдсэн хувь эзэмшигчдийн жагсаалт. Ийм хувь эзэмшигч байвал төвлөрлийн үзүүлэлтүүд <code>null</code> байна.</li>
 </ul>
