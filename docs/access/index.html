@@ -8,6 +8,7 @@
   <p class="doc-intro">T21 API-д Developer Platform-ийн олгосон token-оор хандана. Token-ий scope нь хандах endpoint-ийг тодорхойлно.</p>
 <h2>Authentication</h2>
 <p>Credential secret-ийг <code>POST /v1/token</code>-д илгээж token авна. <code>scopes</code> жагсаалт өгвөл token-ий scope-ийг нарийсгана. Token 300 секунд хүчинтэй.</p>
+<p>Credential үүсгэх, token авах бүрд Developer Platform T21-ийн зөвшөөрлийг шалгана. T21-ийн зөвшөөрөөгүй scope-той credential үүсгэвэл HTTP 403, <code>scope_not_grantable</code> алдаа буцаана. Зөвшөөрлийг цуцалбал тухайн scope-той credential цуцлагдана.</p>
 <p>T21 API-д token-ийг <code>Authorization: Bearer &lt;access_token&gt;</code> эсвэл <code>x-api-key</code> header-ээр илгээнэ. Хоёуланг нь илгээвэл <code>x-api-key</code>-г ашиглана.</p>
 <p>Token нь <code>t21_access.v1</code> contract бүхий PASETO <code>v4.public</code> (Ed25519). Claim: <code>iss</code>, <code>aud</code>, <code>sub</code>, <code>project_ref</code>, <code>credential_ref</code>, <code>jti</code>, <code>iat</code>, <code>nbf</code>, <code>exp</code>, <code>scopes</code>.</p>
 <h2>Scope</h2>

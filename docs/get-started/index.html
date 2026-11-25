@@ -6,8 +6,10 @@
   <nav class="docs-nav" aria-label="Баримт бичгийн цэс"><a class="docs-nav-home" href="/t21-ecosystem/docs/">Баримт бичиг</a><ul><li class="docs-nav-single"><a href="/t21-ecosystem/docs/get-started/" aria-current="page">Get started</a></li><li><span class="docs-nav-group">Guides</span><ul><li><a href="/t21-ecosystem/docs/guides/price-history/">Ханшийн түүх авах</a></li><li><a href="/t21-ecosystem/docs/guides/financial-statements/">Санхүүгийн тайлан авах</a></li><li><a href="/t21-ecosystem/docs/guides/ownership/">Хувь эзэмшлийн мэдээлэл авах</a></li></ul></li><li><span class="docs-nav-group">Concepts</span><ul><li><a href="/t21-ecosystem/docs/concepts/architecture/">Architecture</a></li><li><a href="/t21-ecosystem/docs/concepts/point-in-time/">Point-in-time</a></li><li><a href="/t21-ecosystem/docs/concepts/provenance/">Provenance</a></li><li><a href="/t21-ecosystem/docs/concepts/data-quality/">Data quality</a></li><li><a href="/t21-ecosystem/docs/concepts/data-integrity/">Data integrity</a></li><li><a href="/t21-ecosystem/docs/concepts/data-contracts/">Data contracts</a></li></ul></li><li class="docs-nav-single"><a href="/t21-ecosystem/docs/access/">Access</a></li><li class="docs-nav-single"><a href="/t21-ecosystem/docs/data-catalog/">Data catalog</a></li><li><span class="docs-nav-group">Reference</span><ul><li><a href="https://t21-api-production.up.railway.app/docs">API reference <span aria-hidden="true">↗</span></a></li><li><a href="/t21-ecosystem/docs/changelog/">Changelog</a></li></ul></li></ul></nav>
   <article class="docs-article"><nav class="docs-breadcrumb" aria-label="Байршил"><a href="/t21-ecosystem/docs/">Баримт бичиг</a> <span aria-hidden="true">/</span> <span aria-current="page">Get started</span></nav><div class="docs-title"><h1>Get started</h1></div>
   <p class="doc-intro">Энэ заавраар Developer Platform-д project үүсгэж, credential авч, T21 API-д анхны хүсэлтээ илгээнэ.</p>
+<h2>Эхлэхийн өмнө</h2>
+<p>Credential үүсгэхэд T21-ийн зөвшөөрөл шаардлагатай. <a href="https://t21-platform-production.up.railway.app/">Developer Platform</a>-д GitHub-ээр нэвтэрвэл таны GitHub ID харагдана. Энэ ID болон хэрэгтэй scope-оо <a href="mailto:t21builds@gmail.com">t21builds@gmail.com</a> хаягаар илгээж зөвшөөрөл хүснэ үү. Scope-ийн жагсаалтыг <a href="/t21-ecosystem/docs/access/">Access</a>-аас үзнэ үү.</p>
 <h2>1. Project болон credential үүсгэх</h2>
-<p><a href="https://t21-platform-production.up.railway.app/">Developer Platform</a>-д GitHub-ээр нэвтэрч, project үүсгэнэ. Project үүсэхэд credential хамт үүснэ. Credential secret зөвхөн нэг удаа харагдах тул аюулгүй газар хадгална уу.</p>
+<p>Developer Platform-д project үүсгэнэ үү. Project үүсэхэд credential хамт үүснэ. Credential secret зөвхөн нэг удаа харагдах тул аюулгүй газар хадгална уу.</p>
 <h2>2. Python client ашиглах</h2>
 <p>Developer Platform нэг файлтай Python client түгээдэг. Python 3.9 буюу түүнээс дээш хувилбар шаардана, зөвхөн standard library ашиглана. Client нь credential-аар token авч, хугацаа нь дуусахад шинэчилнэ.</p>
 <pre class="doc-code" tabindex="0"><code>curl -O https://t21-platform-production.up.railway.app/sdk/python/t21.py
@@ -17,11 +19,11 @@ export T21_CREDENTIAL="&lt;credential secret&gt;"</code></pre>
 client = T21()
 print(client.stats()["data"])</code></pre>
 <h2>3. HTTP-ээр шууд хандах</h2>
-<p>Credential secret-ийг <code>POST /v1/token</code>-д илгээж token авна. Token 300 секунд хүчинтэй.</p>
+<p>Credential secret-ийг <code>POST /v1/token</code>-д илгээж token авна уу. Token 300 секунд хүчинтэй.</p>
 <pre class="doc-code" tabindex="0"><code>curl -X POST https://t21-platform-production.up.railway.app/v1/token \
   -H "Content-Type: application/json" \
   -d '{"credential_secret": "&lt;credential secret&gt;"}'</code></pre>
-<p>Хариунд <code>access_token</code>, <code>token_type</code> (<code>Bearer</code>), <code>expires_in</code>, <code>scopes</code> талбарууд ирнэ. Token-ийг T21 API-д <code>Authorization</code> header-ээр илгээнэ.</p>
+<p>Хариунд <code>access_token</code>, <code>token_type</code> (<code>Bearer</code>), <code>expires_in</code>, <code>scopes</code> талбарууд ирнэ. Token-ийг T21 API-д <code>Authorization</code> header-ээр илгээнэ үү.</p>
 <pre class="doc-code" tabindex="0"><code>curl https://t21-api-production.up.railway.app/v1/data/stats \
   -H "Authorization: Bearer &lt;access_token&gt;"</code></pre>
 <h2>Дараагийн алхам</h2>
