@@ -7,12 +7,12 @@
   <article class="docs-article"><nav class="docs-breadcrumb" aria-label="Байршил"><a href="/docs/">Баримт бичиг</a> <span aria-hidden="true">/</span> <span aria-current="page">Get started</span></nav><div class="docs-title"><h1>Get started</h1></div>
   <p class="doc-intro">Энэ заавраар credential авч, T21 API-д анхны хүсэлтээ илгээнэ.</p>
 <h2>Эхлэхийн өмнө</h2>
-<p>Credential үүсгэхэд T21-ийн зөвшөөрөл шаардлагатай. Зөвшөөрлийг <a href="https://t21-platform-production.up.railway.app/">Developer Platform</a>-д нэвтэрч хүснэ үү.</p>
+<p>Credential үүсгэхэд T21-ийн зөвшөөрөл шаардлагатай. Зөвшөөрлийг <a href="https://platform.t21.one/">Developer Platform</a>-д нэвтэрч хүснэ үү.</p>
 <h2>1. Credential үүсгэх</h2>
 <p>Developer Platform-д project үүсгэхэд credential хамт үүснэ. Түүний secret зөвхөн нэг удаа харагдах тул орчны хувьсагчид хадгална уу.</p>
 <h2>2. Python client ашиглах</h2>
 <p>Python 3.9 буюу түүнээс дээш хувилбар шаардана.</p>
-<pre class="doc-code" tabindex="0"><code>curl -O https://t21-platform-production.up.railway.app/sdk/python/t21.py
+<pre class="doc-code" tabindex="0"><code>curl -O https://platform.t21.one/sdk/python/t21.py
 export T21_CREDENTIAL="&lt;credential secret&gt;"</code></pre>
 <pre class="doc-code" tabindex="0"><code>from t21 import T21
 
@@ -20,7 +20,7 @@ client = T21()
 print(client.stats()["data"])</code></pre>
 <h2>3. HTTP-ээр шууд хандах</h2>
 <p>Credential secret-ийг <code>POST /v1/token</code>-д илгээж token авна уу. Token 300 секунд хүчинтэй.</p>
-<pre class="doc-code" tabindex="0"><code>curl -X POST https://t21-platform-production.up.railway.app/v1/token \
+<pre class="doc-code" tabindex="0"><code>curl -X POST https://platform.t21.one/v1/token \
   -H "Content-Type: application/json" \
   -d '{"credential_secret": "&lt;credential secret&gt;"}'</code></pre>
 <p>Хариунд <code>access_token</code>, <code>token_type</code> (<code>Bearer</code>), <code>expires_in</code>, <code>scopes</code> талбарууд ирнэ. <code>access_token</code>-ийг T21 API-д <code>Authorization</code> header-ээр илгээнэ үү.</p>
