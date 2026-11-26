@@ -7,11 +7,11 @@
   <article class="docs-article"><nav class="docs-breadcrumb" aria-label="Байршил"><a href="/t21-ecosystem/docs/">Баримт бичиг</a> <span aria-hidden="true">/</span> <span aria-current="page">Get started</span></nav><div class="docs-title"><h1>Get started</h1></div>
   <p class="doc-intro">Энэ заавраар Developer Platform-д project үүсгэж, credential авч, T21 API-д анхны хүсэлтээ илгээнэ.</p>
 <h2>Эхлэхийн өмнө</h2>
-<p>Credential үүсгэхэд T21-ийн зөвшөөрөл шаардлагатай. Зөвшөөрөл хүсэхийн тулд <a href="https://t21-platform-production.up.railway.app/">Developer Platform</a>-д GitHub-ээр нэвтэрч, хэрэгтэй scope-оо сонгоод ашиглах зорилгоо бичиж хүсэлт илгээнэ үү. Хүсэлтийн төлөв Developer Platform-д харагдана.</p>
+<p>Credential үүсгэхэд T21-ийн зөвшөөрөл шаардлагатай. Зөвшөөрлийг <a href="https://t21-platform-production.up.railway.app/">Developer Platform</a>-д нэвтэрч хүснэ үү.</p>
 <h2>1. Project болон credential үүсгэх</h2>
-<p>Developer Platform-д project үүсгэнэ үү. Project үүсэхэд credential хамт үүснэ. Credential secret зөвхөн нэг удаа харагдах тул аюулгүй газар хадгална уу.</p>
+<p>Developer Platform-д project үүсгэнэ үү. Project үүсэхэд credential хамт үүснэ. Credential secret зөвхөн нэг удаа харагдана. Үүнийг орчны хувьсагчид хадгална уу.</p>
 <h2>2. Python client ашиглах</h2>
-<p>Developer Platform нэг файлтай Python client түгээдэг. Python 3.9 буюу түүнээс дээш хувилбар шаардана, зөвхөн standard library ашиглана. Client нь credential-аар token авч, хугацаа нь дуусахад шинэчилнэ.</p>
+<p>Python client-ийг татаж аваад credential secret-ээ орчны хувьсагчид тохируулна уу. Python 3.9 буюу түүнээс дээш хувилбар шаардана.</p>
 <pre class="doc-code" tabindex="0"><code>curl -O https://t21-platform-production.up.railway.app/sdk/python/t21.py
 export T21_CREDENTIAL="&lt;credential secret&gt;"</code></pre>
 <pre class="doc-code" tabindex="0"><code>from t21 import T21
