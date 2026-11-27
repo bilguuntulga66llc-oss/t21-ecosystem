@@ -75,6 +75,12 @@
   <url><loc>https://t21.one/en/data/official-statistics/</loc></url>
   <url><loc>https://t21.one/en/data/research-catalog/</loc></url>
   <url><loc>https://t21.one/en/developers/</loc></url>
+  <url><loc>https://t21.one/en/docs/</loc></url>
+  <url><loc>https://t21.one/en/docs/concepts/point-in-time/</loc></url>
+  <url><loc>https://t21.one/en/docs/concepts/provenance/</loc></url>
+  <url><loc>https://t21.one/en/docs/concepts/data-quality/</loc></url>
+  <url><loc>https://t21.one/en/docs/concepts/data-integrity/</loc></url>
+  <url><loc>https://t21.one/en/docs/concepts/data-contracts/</loc></url>
   <url><loc>https://t21.one/docs/</loc></url>
   <url><loc>https://t21.one/docs/get-started/</loc></url>
   <url><loc>https://t21.one/docs/guides/price-history/</loc></url>
