@@ -30,12 +30,12 @@
 <tr><td data-label="Өгөгдөл">Хувь эзэмшил, засаглал</td><td data-label="&lt;code&gt;open:read&lt;/code&gt;">Одоогийн төлөв</td></tr>
 <tr><td data-label="Өгөгдөл">Тооцоолол, эрсдэлийн хэмжүүр, үнэлгээний түүх, тулгалт, судалгааны өгөгдөл</td><td data-label="&lt;code&gt;open:read&lt;/code&gt;">Хамаарахгүй</td></tr>
 </tbody></table>
-<p>90 хоног нь өгөгдөлд хадгалагдсан хамгийн сүүлийн арилжааны өдрөөр төгсөнө. Хугацааг цагаас бус өгөгдлөөс тогтооно.</p>
+<p>90 хоног нь өгөгдөлд хадгалагдсан хамгийн сүүлийн арилжааны өдрөөр төгсөнө.</p>
 <p>Platform-ийн token-оор авсан хариу бүр <code>access</code> талбартай. Бүрэн түвшинд <code>{"tier": "full"}</code>, нээлттэй түвшинд <code>rule</code> нь хэрэглэсэн дүрмийг заана. 90 хоногийн дүрэмд <code>from</code>, <code>to</code> нь хугацааны хоёр захыг, <code>outside_window</code> нь хугацаанаас гадуурх тул оруулаагүй мөрийн тоог заана. Мөрийг бүтнээр нь өгнө, эсвэл оруулахгүй. Утгыг өөрчлөхгүй.</p>
 <p>90 хоногоос өмнөх огноо асуувал HTTP 403, <code>outside_open_access</code> алдаа буцаана. Алдаа нь тухайн параметр болон хугацааг нэрлэнэ. Хамгийн сүүлийн тайлан, одоогийн төлөвөөс өмнөх төлөвийг асуух параметрт мөн ийм алдаа буцаана.</p>
 <h2>Credential шаардахгүй endpoint</h2>
 <p><code>GET /v1/system/health</code>, <code>GET /v1/system/consumption-manifest</code>, <code>GET /v1/system/source-registry</code>, <code>GET /v1/system/datasets</code>.</p>
-<p>Үндэсний статистикийн хорооны хүснэгтүүд (<code>GET /v1/macro/statistics</code>, <code>GET /v1/macro/statistics/{table_id}</code>) credential шаардахгүй: эх сурвалжийн ашиглалтын нөхцөл гуравдагч этгээдийн хандалтыг хязгаарлахыг хориглодог. Хариу нь <code>access: {"tier": "public"}</code> гэж заана. Rate limit нь хаяг тус бүрээр үйлчилнэ.</p>
+<p>Үндэсний статистикийн хорооны хүснэгтүүд (<code>GET /v1/macro/statistics</code>, <code>GET /v1/macro/statistics/{table_id}</code>) credential шаардахгүй. Хариу нь <code>access: {"tier": "public"}</code> гэж заана. Rate limit нь хаяг тус бүрээр үйлчилнэ.</p>
 <h2>Rate limit</h2>
 <p>Developer Platform-ийн token-оор илгээсэн хүсэлтэд project тус бүрээр rate limit үйлчилнэ. <code>open:read</code>-ийн хязгаар бага бөгөөд бүртгэл тус бүрээр, түүний бүх project-ийг нийлүүлж тоологдоно. Rate limit хэтэрвэл 429 буцаана. Хүсэлтийн давтамжийг <code>Retry-After</code> болон <code>X-RateLimit-Limit</code>, <code>X-RateLimit-Remaining</code>, <code>X-RateLimit-Reset</code> header-ийн дагуу тохируулна. <code>X-RateLimit-Reset</code> нь хязгаар шинэчлэгдэх хүртэлх секунд.</p>
 <h2>Алдаа</h2>
