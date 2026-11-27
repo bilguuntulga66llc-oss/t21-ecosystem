@@ -13,7 +13,7 @@
 <p>Token нь <code>t21_access.v1</code> contract бүхий PASETO <code>v4.public</code> (Ed25519). Claim: <code>iss</code>, <code>aud</code>, <code>sub</code>, <code>project_ref</code>, <code>credential_ref</code>, <code>jti</code>, <code>iat</code>, <code>nbf</code>, <code>exp</code>, <code>scopes</code>.</p>
 <h2>Scope</h2>
 <table class="doc-table" tabindex="0"><thead><tr><th>Scope</th><th>Хамрах өгөгдөл</th></tr></thead><tbody>
-<tr><td data-label="Scope"><code>market:read</code></td><td data-label="Хамрах өгөгдөл">Ханш, арилжаа, макро статистик, зах зээлийн статистик</td></tr>
+<tr><td data-label="Scope"><code>market:read</code></td><td data-label="Хамрах өгөгдөл">Ханш, арилжаа, зах зээлийн статистик</td></tr>
 <tr><td data-label="Scope"><code>company:read</code></td><td data-label="Хамрах өгөгдөл">Үнэт цаасны жагсаалт, дэлгэрэнгүй, компанийн танилцуулга</td></tr>
 <tr><td data-label="Scope"><code>disclosures:read</code></td><td data-label="Хамрах өгөгдөл">Мэдэгдэл, үнэт цаас гаргагчийн нийтэлсэн мэдээлэл, компанийн үйл явдал</td></tr>
 <tr><td data-label="Scope"><code>knowledge:read</code></td><td data-label="Хамрах өгөгдөл">Санхүүгийн тайлан, хувь эзэмшил, засаглал, суурь үзүүлэлт, үнэлгээ, өгөгдлийн бүрэн бүтэн байдал</td></tr>
@@ -24,7 +24,7 @@
 <h2>Хоёр түвшин</h2>
 <p><code>open:read</code>-тэй token нь нээлттэй түвшинд дараах хүрээнд хандана. Бусад scope нь бүрэн түвшин: бүх түүхтэй.</p>
 <table class="doc-table" tabindex="0"><thead><tr><th>Өгөгдөл</th><th><code>open:read</code></th></tr></thead><tbody>
-<tr><td data-label="Өгөгдөл">Үнэт цаас, таних код, компанийн танилцуулга, зах зээлийн үнэлгээ, макро эдийн засгийн статистик, мэдэгдэл, компанийн үйл явдал</td><td data-label="&lt;code&gt;open:read&lt;/code&gt;">Бүгд</td></tr>
+<tr><td data-label="Өгөгдөл">Үнэт цаас, таних код, компанийн танилцуулга, зах зээлийн үнэлгээ, мэдэгдэл, компанийн үйл явдал</td><td data-label="&lt;code&gt;open:read&lt;/code&gt;">Бүгд</td></tr>
 <tr><td data-label="Өгөгдөл">Өдрийн ханш, candle, арилжаа, индекс, ногдол ашиг, ногдол ашгийн бүртгэл</td><td data-label="&lt;code&gt;open:read&lt;/code&gt;">Сүүлийн 90 хоног</td></tr>
 <tr><td data-label="Өгөгдөл">Санхүүгийн тайлан</td><td data-label="&lt;code&gt;open:read&lt;/code&gt;">Компани бүрийн хамгийн сүүлийн тайлан</td></tr>
 <tr><td data-label="Өгөгдөл">Хувь эзэмшил, засаглал</td><td data-label="&lt;code&gt;open:read&lt;/code&gt;">Одоогийн төлөв</td></tr>
@@ -35,6 +35,7 @@
 <p>90 хоногоос өмнөх огноо асуувал HTTP 403, <code>outside_open_access</code> алдаа буцаана. Алдаа нь тухайн параметр болон хугацааг нэрлэнэ. Хамгийн сүүлийн тайлан, одоогийн төлөвөөс өмнөх төлөвийг асуух параметрт мөн ийм алдаа буцаана.</p>
 <h2>Credential шаардахгүй endpoint</h2>
 <p><code>GET /v1/system/health</code>, <code>GET /v1/system/consumption-manifest</code>, <code>GET /v1/system/source-registry</code>, <code>GET /v1/system/datasets</code>.</p>
+<p>Үндэсний статистикийн хорооны хүснэгтүүд (<code>GET /v1/macro/statistics</code>, <code>GET /v1/macro/statistics/{table_id}</code>) credential шаардахгүй: эх сурвалжийн ашиглалтын нөхцөл гуравдагч этгээдийн хандалтыг хязгаарлахыг хориглодог. Хариу нь <code>access: {"tier": "public"}</code> гэж заана. Rate limit нь хаяг тус бүрээр үйлчилнэ.</p>
 <h2>Rate limit</h2>
 <p>Developer Platform-ийн token-оор илгээсэн хүсэлтэд project тус бүрээр rate limit үйлчилнэ. <code>open:read</code>-ийн хязгаар бага бөгөөд бүртгэл тус бүрээр, түүний бүх project-ийг нийлүүлж тоологдоно. Rate limit хэтэрвэл 429 буцаана. Хүсэлтийн давтамжийг <code>Retry-After</code> болон <code>X-RateLimit-Limit</code>, <code>X-RateLimit-Remaining</code>, <code>X-RateLimit-Reset</code> header-ийн дагуу тохируулна. <code>X-RateLimit-Reset</code> нь хязгаар шинэчлэгдэх хүртэлх секунд.</p>
 <h2>Алдаа</h2>
